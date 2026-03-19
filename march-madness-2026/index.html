@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>March Madness 2026 — Bracket Analysis &amp; Picks</title>
+<meta name="description" content="Three data-driven bracket strategies for March Madness 2026, built from 60 ESPN expert picks, KenPom analytics, Vegas odds, and historical trends.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-deep: #0a0e1a;
+  --bg-card: #141b2d;
+  --bg-card-hover: #1a2340;
+  --bg-surface: #0f1525;
+  --orange: #ff6b35;
+  --orange-glow: rgba(255, 107, 53, 0.15);
+  --gold: #ffc857;
+  --gold-glow: rgba(255, 200, 87, 0.12);
+  --green: #4ade80;
+  --green-dim: #2a9d5a;
+  --red: #ef4444;
+  --white: #ffffff;
+  --text-primary: #f0f0f5;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-accent: rgba(255, 107, 53, 0.3);
+  --nav-height: 60px;
+  --max-width: 1200px;
+  --section-pad: 80px;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--bg-deep);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Barlow Condensed', 'Impact', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 800; }
+h2 { font-size: clamp(1.75rem, 3.5vw, 2.75rem); }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+h4 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
+
+p { max-width: 72ch; }
+
+.section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: var(--section-pad) 0;
+  scroll-margin-top: calc(var(--nav-height) + 16px);
+}
+
+/* ===== NAV ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background: rgba(10, 14, 26, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--orange);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-brand svg {
+  width: 28px;
+  height: 28px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-toggle svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Mobile nav */
+@media (max-width: 768px) {
+  .nav-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(10, 14, 26, 0.98);
+    border-bottom: 1px solid var(--border);
+    padding: 12px;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 12px 16px; }
+}
+
+/* ===== HERO ===== */
+.hero {
+  padding-top: calc(var(--nav-height) + 60px);
+  padding-bottom: 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255, 107, 53, 0.08) 0%, transparent 60%),
+    var(--bg-deep);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 107, 53, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-ball {
+  margin: 0 auto 24px;
+  opacity: 0.25;
+}
+
+.hero h1 {
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.hero h1 span {
+  color: var(--orange);
+}
+
+.hero-subtitle {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.hero-tagline {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.seeds-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.seed-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 12px;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.seed-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-2px);
+}
+
+.seed-number {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--orange);
+  margin-bottom: 4px;
+}
+
+.seed-team {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.seed-record {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+@media (max-width: 500px) {
+  .seeds-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== COMPARISON TABLE ===== */
+.comparison-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.comparison-table thead th {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--bg-card);
+  padding: 16px 14px;
+  text-align: left;
+  border-bottom: 2px solid var(--orange);
+  white-space: nowrap;
+}
+
+.comparison-table thead th:first-child {
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.comparison-table tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.comparison-table tbody tr:nth-child(odd) td {
+  background: var(--bg-surface);
+}
+
+.comparison-table tbody tr:nth-child(even) td {
+  background: var(--bg-card);
+}
+
+.comparison-table tbody td:first-child {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.comparison-table .champ-cell {
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.risk-low { color: var(--green); font-weight: 600; }
+.risk-med { color: var(--gold); font-weight: 600; }
+.risk-high { color: var(--red); font-weight: 600; }
+
+/* ===== VERSION TABS ===== */
+.version-tabs-nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.version-tab-btn {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 24px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.version-tab-btn:hover {
+  border-color: var(--border-accent);
+  color: var(--white);
+}
+
+.version-tab-btn.active {
+  background: var(--orange);
+  color: var(--bg-deep);
+  border-color: var(--orange);
+}
+
+.version-panel { display: none; }
+.version-panel.active { display: block; }
+
+/* ===== VERSION HEADER ===== */
+.version-header {
+  margin-bottom: 32px;
+  padding: 24px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border-left: 4px solid var(--orange);
+}
+
+.version-header h3 {
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+
+.version-header p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* ===== REGION CARDS ===== */
+.region-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 900px) {
+  .region-grid { grid-template-columns: 1fr; }
+}
+
+.region-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.region-card-header {
+  padding: 16px 20px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.region-card-header h4 {
+  color: var(--white);
+  font-size: 1.1rem;
+}
+
+.region-location {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.region-card-body {
+  padding: 16px 20px;
+}
+
+.round-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 14px 0 6px;
+}
+
+.round-label:first-child { margin-top: 0; }
+
+.game-line {
+  font-size: 0.85rem;
+  padding: 5px 0;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.game-line .seed {
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.game-line .winner {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.game-line.upset {
+  color: var(--gold);
+  font-weight: 600;
+  padding: 5px 8px;
+  margin: 2px -8px;
+  border-radius: 4px;
+  background: var(--gold-glow);
+}
+
+.game-line.upset .winner {
+  color: var(--gold);
+}
+
+.game-line.key-upset {
+  color: var(--orange);
+  font-weight: 600;
+  padding: 5px 8px;
+  margin: 2px -8px;
+  border-radius: 4px;
+  background: var(--orange-glow);
+  border-left: 3px solid var(--orange);
+}
+
+.game-line.key-upset .winner {
+  color: var(--orange);
+}
+
+.upset-icon { font-size: 0.85rem; }
+
+.region-champion {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: rgba(255, 107, 53, 0.08);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  border-radius: 8px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--orange);
+  text-align: center;
+}
+
+.region-champion span {
+  color: var(--white);
+}
+
+/* ===== FINAL FOUR BOX ===== */
+.final-four-box {
+  background: var(--bg-card);
+  border: 2px solid var(--orange);
+  border-radius: 14px;
+  padding: 28px;
+  text-align: center;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-four-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255,107,53,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.final-four-box h3 {
+  color: var(--orange);
+  margin-bottom: 16px;
+}
+
+.ff-matchups {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.ff-matchup {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.ff-matchup .vs {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin: 0 6px;
+}
+
+.championship-result {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--white);
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.championship-result .champ-name {
+  color: var(--orange);
+}
+
+/* ===== UPSETS SUMMARY ===== */
+.upsets-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+.upset-summary-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.upset-summary-card .upset-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.upset-matchup {
+  font-weight: 600;
+  color: var(--gold);
+  font-size: 0.88rem;
+  margin-bottom: 2px;
+}
+
+.upset-conf {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.conf-high { background: rgba(74, 222, 128, 0.15); color: var(--green); }
+.conf-med { background: rgba(255, 200, 87, 0.12); color: var(--gold); }
+.conf-med-high { background: rgba(74, 222, 128, 0.1); color: #86efac; }
+
+/* ===== ANALYSIS SECTION ===== */
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .analysis-grid { grid-template-columns: 1fr; }
+}
+
+.analysis-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.analysis-card h4 {
+  color: var(--orange);
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+
+.stat-row:last-child { border-bottom: none; }
+
+.stat-label { color: var(--text-secondary); }
+.stat-value { color: var(--white); font-weight: 600; }
+
+.stat-highlight { color: var(--orange); font-weight: 700; }
+
+/* ===== KENPOM TABLE ===== */
+.kenpom-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+
+.kenpom-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.kenpom-table thead th {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--bg-card);
+  padding: 14px;
+  text-align: center;
+  border-bottom: 2px solid var(--orange);
+}
+
+.kenpom-table thead th:first-child {
+  text-align: left;
+}
+
+.kenpom-table tbody td {
+  padding: 12px 14px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.kenpom-table tbody td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.kenpom-table tbody tr:nth-child(odd) td { background: var(--bg-surface); }
+.kenpom-table tbody tr:nth-child(even) td { background: var(--bg-card); }
+
+.kenpom-table tbody tr:nth-child(2) td {
+  border-left-color: var(--orange);
+}
+
+.kenpom-table .highlight-row td {
+  background: rgba(255, 107, 53, 0.06) !important;
+  color: var(--orange);
+  font-weight: 600;
+}
+
+.kenpom-table .highlight-row td:first-child {
+  color: var(--orange);
+}
+
+/* ===== BAR CHART ===== */
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bar-label {
+  min-width: 110px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: right;
+}
+
+.bar-track {
+  flex: 1;
+  height: 28px;
+  background: var(--bg-surface);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--orange), #ff8f5e);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  justify-content: flex-end;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--bg-deep);
+  min-width: 48px;
+  transition: width 0.6s ease;
+}
+
+.bar-fill.top {
+  background: linear-gradient(90deg, var(--orange), #ff4500);
+}
+
+/* ===== ODDS SECTION ===== */
+.odds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.odds-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+}
+
+.odds-team {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.odds-line {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  padding: 3px 0;
+}
+
+.odds-line .book {
+  color: var(--text-muted);
+}
+
+.odds-line .number {
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* ===== MUST-PICK UPSETS ===== */
+.must-pick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .must-pick-grid { grid-template-columns: 1fr; }
+}
+
+.must-pick-card {
+  background: var(--bg-card);
+  border: 1px solid var(--gold);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255, 200, 87, 0.06);
+}
+
+.must-pick-number {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: rgba(255, 200, 87, 0.15);
+  position: absolute;
+  top: 10px;
+  right: 16px;
+}
+
+.must-pick-matchup {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.must-pick-detail {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ===== FULL-WIDTH CARD ===== */
+.full-card {
+  grid-column: 1 / -1;
+}
+
+/* ===== WHY ARIZONA ===== */
+.arizona-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 768px) {
+  .arizona-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .arizona-grid { grid-template-columns: 1fr; }
+}
+
+.az-stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+}
+
+.az-stat-card .az-icon {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+.az-stat-value {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--orange);
+  margin-bottom: 2px;
+}
+
+.az-stat-label {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.footer a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s;
+}
+
+.footer a:hover {
+  color: var(--orange);
+}
+
+/* ===== UTILITIES ===== */
+.mb-8 { margin-bottom: 8px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-32 { margin-bottom: 32px; }
+.mb-48 { margin-bottom: 48px; }
+.text-center { text-align: center; }
+.text-orange { color: var(--orange); }
+.text-gold { color: var(--gold); }
+.text-green { color: var(--green); }
+.text-muted { color: var(--text-muted); }
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <a href="#" class="nav-brand">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M2 16h28" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M16 2c-4 4-6 9-6 14s2 10 6 14" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M16 2c4 4 6 9 6 14s-2 10-6 14" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+      MM 2026
+    </a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle navigation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#brackets">Brackets</a></li>
+      <li><a href="#analysis">Analysis</a></li>
+      <li><a href="#upsets">Must-Pick</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="container">
+    <!-- Basketball SVG -->
+    <div class="hero-ball">
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="36" stroke="#ff6b35" stroke-width="3"/>
+        <path d="M4 40h72" stroke="#ff6b35" stroke-width="1.5" opacity="0.6"/>
+        <path d="M40 4v72" stroke="#ff6b35" stroke-width="1.5" opacity="0.6"/>
+        <path d="M40 4c-12 10-18 22-18 36s6 26 18 36" stroke="#ff6b35" stroke-width="1.5" opacity="0.6"/>
+        <path d="M40 4c12 10 18 22 18 36s-6 26-18 36" stroke="#ff6b35" stroke-width="1.5" opacity="0.6"/>
+      </svg>
+    </div>
+    <h1>March Madness <span>2026</span></h1>
+    <p class="hero-subtitle">Bracket Analysis &amp; Picks</p>
+    <p class="hero-tagline">Three data-driven bracket strategies — built from 60 ESPN expert picks, KenPom analytics, Vegas odds, and historical trends.</p>
+
+    <div class="seeds-grid">
+      <div class="seed-card">
+        <div class="seed-number">#1 Seed — East</div>
+        <div class="seed-team">Duke</div>
+        <div class="seed-record">32-2</div>
+      </div>
+      <div class="seed-card">
+        <div class="seed-number">#1 Seed — West</div>
+        <div class="seed-team">Arizona</div>
+        <div class="seed-record">32-2</div>
+      </div>
+      <div class="seed-card">
+        <div class="seed-number">#1 Seed — Midwest</div>
+        <div class="seed-team">Michigan</div>
+        <div class="seed-record">31-3</div>
+      </div>
+      <div class="seed-card">
+        <div class="seed-number">#1 Seed — South</div>
+        <div class="seed-team">Florida</div>
+        <div class="seed-record">26-7</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OVERVIEW / COMPARISON ===== -->
+<section id="overview">
+  <div class="container">
+    <p class="section-label">Side-by-Side</p>
+    <h2 class="mb-24">Three Bracket Strategies</h2>
+
+    <div class="comparison-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>V1: Chalk + Strategic</th>
+            <th>V2: Swing for Fences</th>
+            <th>V3: Conservative (40-Pool)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Champion</td>
+            <td class="champ-cell">Arizona</td>
+            <td class="champ-cell">Arizona</td>
+            <td class="champ-cell">Arizona</td>
+          </tr>
+          <tr>
+            <td>Runner-Up</td>
+            <td>Michigan</td>
+            <td>Florida</td>
+            <td>Duke</td>
+          </tr>
+          <tr>
+            <td>Final Four</td>
+            <td>Arizona, Duke, Michigan, Houston</td>
+            <td>Arizona, Mich. State, Florida, Iowa State</td>
+            <td>Arizona, Duke, Michigan, Houston</td>
+          </tr>
+          <tr>
+            <td>1-Seeds in F4</td>
+            <td>3 of 4</td>
+            <td>2 of 4</td>
+            <td>3 of 4</td>
+          </tr>
+          <tr>
+            <td>Total R64 Upsets</td>
+            <td>7</td>
+            <td>11</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>Big Late Upsets</td>
+            <td>Houston over Florida (E8)</td>
+            <td>MSU over Duke (E8), Iowa St over Michigan (E8)</td>
+            <td>Houston over Florida (E8)</td>
+          </tr>
+          <tr>
+            <td>Best For</td>
+            <td>Large pools (50+)</td>
+            <td>Small/competitive pools</td>
+            <td>Medium pools (~40)</td>
+          </tr>
+          <tr>
+            <td>Risk Level</td>
+            <td class="risk-med">Medium</td>
+            <td class="risk-high">High</td>
+            <td class="risk-low">Low</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BRACKETS ===== -->
+<section id="brackets">
+  <div class="container">
+    <p class="section-label">The Brackets</p>
+    <h2 class="mb-32">Full Picks by Version</h2>
+
+    <div class="version-tabs-nav">
+      <button class="version-tab-btn active" data-tab="v1">V1: Chalk + Strategic</button>
+      <button class="version-tab-btn" data-tab="v2">V2: Swing for Fences</button>
+      <button class="version-tab-btn" data-tab="v3">V3: Conservative</button>
+    </div>
+
+    <!-- ===== VERSION 1 ===== -->
+    <div class="version-panel active" id="v1">
+      <div class="version-header">
+        <h3>Version 1: "Chalk with Strategic Upsets"</h3>
+        <p>Ride the favorites where data supports them. Pick only high-consensus upsets. Best for large pools (50+ entries).</p>
+      </div>
+
+      <div class="region-grid">
+        <!-- EAST -->
+        <div class="region-card">
+          <div class="region-card-header">
+            <h4>East Region</h4>
+            <span class="region-location">Washington, D.C.</span>
+          </div>
+          <div class="region-card-body">
+            <div class="round-label">Round of 64</div>
+            <div class="game-line"><span class="seed">(1)</span> <span class="winner">Duke</span> over <span class="seed">(16)</span> Siena</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="seed">(9)</span> <span class="winner">TCU</span> over <span class="seed">(8)</span> Ohio State</div>
+            <div class="game-line"><span class="seed">(5)</span> <span class="winner">St. John's</span> over <span class="seed">(12)</span> Northern Iowa</div>
+            <div class="game-line"><span class="seed">(4)</span> <span class="winner">Kansas</span> over <span class="seed">(13)</span> Cal Baptist</div>
+            <div class="game-line key-upset"><span class="upset-icon">⚡</span> <span class="seed">(11)</span> <span class="winner">South Florida</span> over <span class="seed">(6)</span> Louisville — Brown Jr. hurt; 39% of public picking this</div>
+            <div class="game-line"><span class="seed">(3)</span> <span class="winner">Michigan State</span> over <span class="seed">(14)</span> North Dakota State</div>
+            <div class="game-line"><span class="seed">(7)</span> <span class="winner">UCLA</span> over <span class="seed">(10)</span> UCF</div>
+            <div class="game-line"><span class="seed">(2)</span> <span class="winner">UConn</span> over <span class="seed">(15)</span> Furman</div>
+            <div class="round-label">Round of 32</div>
+            <div class="game-line"><span class="winner">Duke</span>, <span class="winner">St. John's</span>, <span class="winner">Michigan State</span>, <span class="winner">UConn</span></div>
+            <div class="round-label">Sweet 16</div>
+            <div class="game-line"><span class="winner">Duke</span>, <span class="winner">Michigan State</span></div>
+            <div class="round-label">Elite Eight</div>
+            <div class="game-line"><span class="winner">Duke</span></div>
+            <div class="region-champion">East Champion: <span>Duke</span></div>
+          </div>
+        </div>
+
+        <!-- SOUTH -->
+        <div class="region-card">
+          <div class="region-card-header">
+            <h4>South Region</h4>
+            <span class="region-location">Houston</span>
+          </div>
+          <div class="region-card-body">
+            <div class="round-label">Round of 64</div>
+            <div class="game-line"><span class="seed">(1)</span> <span class="winner">Florida</span> over <span class="seed">(16)</span> Lehigh</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="seed">(9)</span> <span class="winner">Iowa</span> over <span class="seed">(8)</span> Clemson</div>
+            <div class="game-line"><span class="seed">(5)</span> <span class="winner">Vanderbilt</span> over <span class="seed">(12)</span> McNeese</div>
+            <div class="game-line"><span class="seed">(4)</span> <span class="winner">Nebraska</span> over <span class="seed">(13)</span> Troy</div>
+            <div class="game-line key-upset"><span class="upset-icon">⚡</span> <span class="seed">(11)</span> <span class="winner">VCU</span> over <span class="seed">(6)</span> North Carolina — UNC's Wilson out (hand surgery)</div>
+            <div class="game-line"><span class="seed">(3)</span> <span class="winner">Illinois</span> over <span class="seed">(14)</span> Penn</div>
+            <div class="game-line"><span class="seed">(7)</span> <span class="winner">Saint Mary's</span> over <span class="seed">(10)</span> Texas A&amp;M</div>
+            <div class="game-line"><span class="seed">(2)</span> <span class="winner">Houston</span> over <span class="seed">(15)</span> Idaho</div>
+            <div class="round-label">Round of 32</div>
+            <div class="game-line"><span class="winner">Florida</span>, <span class="winner">Vanderbilt</span>, <span class="winner">Illinois</span>, <span class="winner">Houston</span></div>
+            <div class="round-label">Sweet 16</div>
+            <div class="game-line"><span class="winner">Florida</span>, <span class="winner">Houston</span></div>
+            <div class="round-label">Elite Eight</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="winner">Houston</span> over Florida</div>
+            <div class="region-champion">South Champion: <span>Houston</span> ⚡</div>
+          </div>
+        </div>
+
+        <!-- WEST -->
+        <div class="region-card">
+          <div class="region-card-header">
+            <h4>West Region</h4>
+            <span class="region-location">San Jose</span>
+          </div>
+          <div class="region-card-body">
+            <div class="round-label">Round of 64</div>
+            <div class="game-line"><span class="seed">(1)</span> <span class="winner">Arizona</span> over <span class="seed">(16)</span> LIU</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="seed">(9)</span> <span class="winner">Utah State</span> over <span class="seed">(8)</span> Villanova</div>
+            <div class="game-line"><span class="seed">(5)</span> <span class="winner">Wisconsin</span> over <span class="seed">(12)</span> High Point</div>
+            <div class="game-line"><span class="seed">(4)</span> <span class="winner">Arkansas</span> over <span class="seed">(13)</span> Hawai'i</div>
+            <div class="game-line"><span class="seed">(6)</span> <span class="winner">BYU</span> over <span class="seed">(11)</span> Texas</div>
+            <div class="game-line"><span class="seed">(3)</span> <span class="winner">Gonzaga</span> over <span class="seed">(14)</span> Kennesaw State</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="seed">(10)</span> <span class="winner">Missouri</span> over <span class="seed">(7)</span> Miami FL</div>
+            <div class="game-line"><span class="seed">(2)</span> <span class="winner">Purdue</span> over <span class="seed">(15)</span> Queens</div>
+            <div class="round-label">Round of 32</div>
+            <div class="game-line"><span class="winner">Arizona</span>, <span class="winner">Arkansas</span>, <span class="winner">Gonzaga</span>, <span class="winner">Purdue</span></div>
+            <div class="round-label">Sweet 16</div>
+            <div class="game-line"><span class="winner">Arizona</span>, <span class="winner">Purdue</span></div>
+            <div class="round-label">Elite Eight</div>
+            <div class="game-line"><span class="winner">Arizona</span></div>
+            <div class="region-champion">West Champion: <span>Arizona</span></div>
+          </div>
+        </div>
+
+        <!-- MIDWEST -->
+        <div class="region-card">
+          <div class="region-card-header">
+            <h4>Midwest Region</h4>
+            <span class="region-location">Chicago</span>
+          </div>
+          <div class="region-card-body">
+            <div class="round-label">Round of 64</div>
+            <div class="game-line"><span class="seed">(1)</span> <span class="winner">Michigan</span> over <span class="seed">(16)</span> Howard</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="seed">(9)</span> <span class="winner">Saint Louis</span> over <span class="seed">(8)</span> Georgia</div>
+            <div class="game-line"><span class="seed">(5)</span> <span class="winner">Texas Tech</span> over <span class="seed">(12)</span> Akron</div>
+            <div class="game-line"><span class="seed">(4)</span> <span class="winner">Alabama</span> over <span class="seed">(13)</span> Hofstra</div>
+            <div class="game-line"><span class="seed">(6)</span> <span class="winner">Tennessee</span> over <span class="seed">(11)</span> Miami OH</div>
+            <div class="game-line"><span class="seed">(3)</span> <span class="winner">Virginia</span> over <span class="seed">(14)</span> Wright State</div>
+            <div class="game-line"><span class="seed">(7)</span> <span class="winner">Kentucky</span> over <span class="seed">(10)</span> Santa Clara</div>
+            <div class="game-line"><span class="seed">(2)</span> <span class="winner">Iowa State</span> over <span class="seed">(15)</span> Tennessee State</div>
+            <div class="round-label">Round of 32</div>
+            <div class="game-line"><span class="winner">Michigan</span>, <span class="winner">Alabama</span>, <span class="winner">Tennessee</span>, <span class="winner">Iowa State</span></div>
+            <div class="round-label">Sweet 16</div>
+            <div class="game-line"><span class="winner">Michigan</span>, <span class="winner">Iowa State</span></div>
+            <div class="round-label">Elite Eight</div>
+            <div class="game-line"><span class="winner">Michigan</span></div>
+            <div class="region-champion">Midwest Champion: <span>Michigan</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final Four V1 -->
+      <div class="final-four-box">
+        <h3>Final Four — Version 1</h3>
+        <div class="ff-matchups">
+          <div class="ff-matchup">Arizona <span class="vs">vs</span> Duke</div>
+          <div class="ff-matchup">Michigan <span class="vs">vs</span> Houston</div>
+        </div>
+        <div class="championship-result">
+          🏆 Champion: <span class="champ-name">Arizona</span> over Michigan
+        </div>
+      </div>
+
+      <!-- V1 Upsets -->
+      <h3 class="mb-16 text-gold">Key Upsets Summary</h3>
+      <div class="upsets-summary">
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">South Florida over Louisville (11 over 6)</div>
+            <span class="upset-conf conf-high">HIGH confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">VCU over North Carolina (11 over 6)</div>
+            <span class="upset-conf conf-high">HIGH confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">Iowa over Clemson (9 over 8)</div>
+            <span class="upset-conf conf-med">MED confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">Saint Louis over Georgia (9 over 8)</div>
+            <span class="upset-conf conf-med">MED confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">TCU over Ohio State (9 over 8)</div>
+            <span class="upset-conf conf-med">MED confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">Utah State over Villanova (9 over 8)</div>
+            <span class="upset-conf conf-med">MED confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">Missouri over Miami FL (10 over 7)</div>
+            <span class="upset-conf conf-med">MED confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">Houston over Florida (2 over 1, Elite Eight)</div>
+            <span class="upset-conf conf-med">MED confidence</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== VERSION 2 ===== -->
+    <div class="version-panel" id="v2">
+      <div class="version-header">
+        <h3>Version 2: "Swing for the Fences"</h3>
+        <p>Differentiate from the field. Aggressive but data-backed. Best for small/competitive pools where you need separation.</p>
+      </div>
+
+      <div class="region-grid">
+        <!-- EAST v2 -->
+        <div class="region-card">
+          <div class="region-card-header">
+            <h4>East Region</h4>
+            <span class="region-location">Washington, D.C.</span>
+          </div>
+          <div class="region-card-body">
+            <div class="round-label">Round of 64</div>
+            <div class="game-line"><span class="seed">(1)</span> <span class="winner">Duke</span> over <span class="seed">(16)</span> Siena</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="seed">(9)</span> <span class="winner">TCU</span> over <span class="seed">(8)</span> Ohio State</div>
+            <div class="game-line"><span class="seed">(5)</span> <span class="winner">St. John's</span> over <span class="seed">(12)</span> Northern Iowa</div>
+            <div class="game-line"><span class="seed">(4)</span> <span class="winner">Kansas</span> over <span class="seed">(13)</span> Cal Baptist</div>
+            <div class="game-line key-upset"><span class="upset-icon">⚡</span> <span class="seed">(11)</span> <span class="winner">South Florida</span> over <span class="seed">(6)</span> Louisville</div>
+            <div class="game-line"><span class="seed">(3)</span> <span class="winner">Michigan State</span> over <span class="seed">(14)</span> North Dakota State</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="seed">(10)</span> <span class="winner">UCF</span> over <span class="seed">(7)</span> UCLA — UCLA banged up</div>
+            <div class="game-line"><span class="seed">(2)</span> <span class="winner">UConn</span> over <span class="seed">(15)</span> Furman</div>
+            <div class="round-label">Round of 32</div>
+            <div class="game-line"><span class="winner">Duke</span>, <span class="winner">St. John's</span>, <span class="winner">Michigan State</span>, <span class="winner">UConn</span></div>
+            <div class="round-label">Sweet 16</div>
+            <div class="game-line"><span class="winner">Duke</span>, <span class="winner">Michigan State</span></div>
+            <div class="round-label">Elite Eight</div>
+            <div class="game-line key-upset"><span class="upset-icon">⚡</span> <span class="winner">Michigan State</span> over Duke — Bilas pick, Izzo's March magic</div>
+            <div class="region-champion">East Champion: <span>Michigan State</span> ⚡</div>
+          </div>
+        </div>
+
+        <!-- SOUTH v2 -->
+        <div class="region-card">
+          <div class="region-card-header">
+            <h4>South Region</h4>
+            <span class="region-location">Houston</span>
+          </div>
+          <div class="region-card-body">
+            <div class="round-label">Round of 64</div>
+            <div class="game-line"><span class="seed">(1)</span> <span class="winner">Florida</span> over <span class="seed">(16)</span> Lehigh</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="seed">(9)</span> <span class="winner">Iowa</span> over <span class="seed">(8)</span> Clemson</div>
+            <div class="game-line"><span class="seed">(5)</span> <span class="winner">Vanderbilt</span> over <span class="seed">(12)</span> McNeese</div>
+            <div class="game-line"><span class="seed">(4)</span> <span class="winner">Nebraska</span> over <span class="seed">(13)</span> Troy</div>
+            <div class="game-line key-upset"><span class="upset-icon">⚡</span> <span class="seed">(11)</span> <span class="winner">VCU</span> over <span class="seed">(6)</span> North Carolina</div>
+            <div class="game-line"><span class="seed">(3)</span> <span class="winner">Illinois</span> over <span class="seed">(14)</span> Penn</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="seed">(10)</span> <span class="winner">Texas A&amp;M</span> over <span class="seed">(7)</span> Saint Mary's</div>
+            <div class="game-line"><span class="seed">(2)</span> <span class="winner">Houston</span> over <span class="seed">(15)</span> Idaho</div>
+            <div class="round-label">Round of 32</div>
+            <div class="game-line"><span class="winner">Florida</span>, <span class="winner">Vanderbilt</span>, <span class="winner">Illinois</span>, <span class="winner">Houston</span></div>
+            <div class="round-label">Sweet 16</div>
+            <div class="game-line"><span class="winner">Florida</span>, <span class="winner">Illinois</span> <span class="text-gold">⚡ (Illinois over Houston — Bilas pick)</span></div>
+            <div class="round-label">Elite Eight</div>
+            <div class="game-line"><span class="winner">Florida</span></div>
+            <div class="region-champion">South Champion: <span>Florida</span></div>
+          </div>
+        </div>
+
+        <!-- WEST v2 -->
+        <div class="region-card">
+          <div class="region-card-header">
+            <h4>West Region</h4>
+            <span class="region-location">San Jose</span>
+          </div>
+          <div class="region-card-body">
+            <div class="round-label">Round of 64</div>
+            <div class="game-line"><span class="seed">(1)</span> <span class="winner">Arizona</span> over <span class="seed">(16)</span> LIU</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="seed">(9)</span> <span class="winner">Utah State</span> over <span class="seed">(8)</span> Villanova</div>
+            <div class="game-line"><span class="seed">(5)</span> <span class="winner">Wisconsin</span> over <span class="seed">(12)</span> High Point</div>
+            <div class="game-line"><span class="seed">(4)</span> <span class="winner">Arkansas</span> over <span class="seed">(13)</span> Hawai'i</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="seed">(11)</span> <span class="winner">Texas</span> over <span class="seed">(6)</span> BYU</div>
+            <div class="game-line"><span class="seed">(3)</span> <span class="winner">Gonzaga</span> over <span class="seed">(14)</span> Kennesaw State</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="seed">(10)</span> <span class="winner">Missouri</span> over <span class="seed">(7)</span> Miami FL</div>
+            <div class="game-line"><span class="seed">(2)</span> <span class="winner">Purdue</span> over <span class="seed">(15)</span> Queens</div>
+            <div class="round-label">Round of 32</div>
+            <div class="game-line"><span class="winner">Arizona</span>, <span class="winner">Arkansas</span>, <span class="winner">Gonzaga</span>, <span class="winner">Purdue</span></div>
+            <div class="round-label">Sweet 16</div>
+            <div class="game-line"><span class="winner">Arizona</span>, <span class="winner">Purdue</span></div>
+            <div class="round-label">Elite Eight</div>
+            <div class="game-line"><span class="winner">Arizona</span></div>
+            <div class="region-champion">West Champion: <span>Arizona</span></div>
+          </div>
+        </div>
+
+        <!-- MIDWEST v2 -->
+        <div class="region-card">
+          <div class="region-card-header">
+            <h4>Midwest Region</h4>
+            <span class="region-location">Chicago</span>
+          </div>
+          <div class="region-card-body">
+            <div class="round-label">Round of 64</div>
+            <div class="game-line"><span class="seed">(1)</span> <span class="winner">Michigan</span> over <span class="seed">(16)</span> Howard</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="seed">(9)</span> <span class="winner">Saint Louis</span> over <span class="seed">(8)</span> Georgia</div>
+            <div class="game-line key-upset"><span class="upset-icon">⚡</span> <span class="seed">(12)</span> <span class="winner">Akron</span> over <span class="seed">(5)</span> Texas Tech — Tech missing JT Toppin</div>
+            <div class="game-line"><span class="seed">(4)</span> <span class="winner">Alabama</span> over <span class="seed">(13)</span> Hofstra</div>
+            <div class="game-line"><span class="seed">(6)</span> <span class="winner">Tennessee</span> over <span class="seed">(11)</span> Miami OH</div>
+            <div class="game-line"><span class="seed">(3)</span> <span class="winner">Virginia</span> over <span class="seed">(14)</span> Wright State</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="seed">(10)</span> <span class="winner">Santa Clara</span> over <span class="seed">(7)</span> Kentucky — Kentucky has no true PG</div>
+            <div class="game-line"><span class="seed">(2)</span> <span class="winner">Iowa State</span> over <span class="seed">(15)</span> Tennessee State</div>
+            <div class="round-label">Round of 32</div>
+            <div class="game-line"><span class="winner">Michigan</span>, <span class="winner">Alabama</span>, <span class="winner">Tennessee</span>, <span class="winner">Iowa State</span></div>
+            <div class="round-label">Sweet 16</div>
+            <div class="game-line"><span class="winner">Michigan</span>, <span class="winner">Iowa State</span></div>
+            <div class="round-label">Elite Eight</div>
+            <div class="game-line key-upset"><span class="upset-icon">⚡</span> <span class="winner">Iowa State</span> over Michigan — Elite D smothers Michigan</div>
+            <div class="region-champion">Midwest Champion: <span>Iowa State</span> ⚡</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final Four V2 -->
+      <div class="final-four-box">
+        <h3>Final Four — Version 2</h3>
+        <div class="ff-matchups">
+          <div class="ff-matchup">Arizona <span class="vs">vs</span> Michigan State</div>
+          <div class="ff-matchup">Florida <span class="vs">vs</span> Iowa State</div>
+        </div>
+        <div class="championship-result">
+          🏆 Champion: <span class="champ-name">Arizona</span> over Florida
+        </div>
+      </div>
+
+      <!-- V2 Upsets -->
+      <h3 class="mb-16 text-gold">Additional Upsets Beyond V1</h3>
+      <div class="upsets-summary">
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">Akron over Texas Tech (12 over 5)</div>
+            <span class="upset-conf conf-med">MED confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">Santa Clara over Kentucky (10 over 7)</div>
+            <span class="upset-conf conf-med">MED confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">Texas over BYU (11 over 6)</div>
+            <span class="upset-conf conf-med">MED confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">UCF over UCLA (10 over 7)</div>
+            <span class="upset-conf conf-med">MED confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">Texas A&amp;M over Saint Mary's (10 over 7)</div>
+            <span class="upset-conf conf-med">MED confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">Illinois over Houston (3 over 2, Sweet 16)</div>
+            <span class="upset-conf conf-med">MED confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">Michigan State over Duke (3 over 1, Elite Eight)</div>
+            <span class="upset-conf conf-med-high">MED-HIGH confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">Iowa State over Michigan (2 over 1, Elite Eight)</div>
+            <span class="upset-conf conf-med">MED confidence</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== VERSION 3 ===== -->
+    <div class="version-panel" id="v3">
+      <div class="version-header">
+        <h3>Version 3: "Conservative" (40-Person Pool)</h3>
+        <p>Ride the best teams deep. Only 5 first-round upsets — all high consensus. One key differentiator: Houston over Florida in the Elite Eight.</p>
+      </div>
+
+      <div class="region-grid">
+        <!-- EAST v3 -->
+        <div class="region-card">
+          <div class="region-card-header">
+            <h4>East Region</h4>
+            <span class="region-location">Washington, D.C.</span>
+          </div>
+          <div class="region-card-body">
+            <div class="round-label">Round of 64</div>
+            <div class="game-line"><span class="seed">(1)</span> <span class="winner">Duke</span> over <span class="seed">(16)</span> Siena</div>
+            <div class="game-line"><span class="seed">(8)</span> <span class="winner">Ohio State</span> over <span class="seed">(9)</span> TCU — conservative, higher seed</div>
+            <div class="game-line"><span class="seed">(5)</span> <span class="winner">St. John's</span> over <span class="seed">(12)</span> Northern Iowa</div>
+            <div class="game-line"><span class="seed">(4)</span> <span class="winner">Kansas</span> over <span class="seed">(13)</span> Cal Baptist</div>
+            <div class="game-line key-upset"><span class="upset-icon">⚡</span> <span class="seed">(11)</span> <span class="winner">South Florida</span> over <span class="seed">(6)</span> Louisville</div>
+            <div class="game-line"><span class="seed">(3)</span> <span class="winner">Michigan State</span> over <span class="seed">(14)</span> North Dakota State</div>
+            <div class="game-line"><span class="seed">(7)</span> <span class="winner">UCLA</span> over <span class="seed">(10)</span> UCF — conservative, higher seed</div>
+            <div class="game-line"><span class="seed">(2)</span> <span class="winner">UConn</span> over <span class="seed">(15)</span> Furman</div>
+            <div class="round-label">Round of 32</div>
+            <div class="game-line"><span class="winner">Duke</span>, <span class="winner">St. John's</span>, <span class="winner">Michigan State</span>, <span class="winner">UConn</span></div>
+            <div class="round-label">Sweet 16</div>
+            <div class="game-line"><span class="winner">Duke</span>, <span class="winner">UConn</span></div>
+            <div class="round-label">Elite Eight</div>
+            <div class="game-line"><span class="winner">Duke</span></div>
+            <div class="region-champion">East Champion: <span>Duke</span></div>
+          </div>
+        </div>
+
+        <!-- SOUTH v3 -->
+        <div class="region-card">
+          <div class="region-card-header">
+            <h4>South Region</h4>
+            <span class="region-location">Houston</span>
+          </div>
+          <div class="region-card-body">
+            <div class="round-label">Round of 64</div>
+            <div class="game-line"><span class="seed">(1)</span> <span class="winner">Florida</span> over <span class="seed">(16)</span> Lehigh</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="seed">(9)</span> <span class="winner">Iowa</span> over <span class="seed">(8)</span> Clemson</div>
+            <div class="game-line"><span class="seed">(5)</span> <span class="winner">Vanderbilt</span> over <span class="seed">(12)</span> McNeese</div>
+            <div class="game-line"><span class="seed">(4)</span> <span class="winner">Nebraska</span> over <span class="seed">(13)</span> Troy</div>
+            <div class="game-line key-upset"><span class="upset-icon">⚡</span> <span class="seed">(11)</span> <span class="winner">VCU</span> over <span class="seed">(6)</span> North Carolina</div>
+            <div class="game-line"><span class="seed">(3)</span> <span class="winner">Illinois</span> over <span class="seed">(14)</span> Penn</div>
+            <div class="game-line"><span class="seed">(7)</span> <span class="winner">Saint Mary's</span> over <span class="seed">(10)</span> Texas A&amp;M</div>
+            <div class="game-line"><span class="seed">(2)</span> <span class="winner">Houston</span> over <span class="seed">(15)</span> Idaho</div>
+            <div class="round-label">Round of 32</div>
+            <div class="game-line"><span class="winner">Florida</span>, <span class="winner">Vanderbilt</span>, <span class="winner">Illinois</span>, <span class="winner">Houston</span></div>
+            <div class="round-label">Sweet 16</div>
+            <div class="game-line"><span class="winner">Florida</span>, <span class="winner">Houston</span></div>
+            <div class="round-label">Elite Eight</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="winner">Houston</span> over Florida</div>
+            <div class="region-champion">South Champion: <span>Houston</span> ⚡</div>
+          </div>
+        </div>
+
+        <!-- WEST v3 -->
+        <div class="region-card">
+          <div class="region-card-header">
+            <h4>West Region</h4>
+            <span class="region-location">San Jose</span>
+          </div>
+          <div class="region-card-body">
+            <div class="round-label">Round of 64</div>
+            <div class="game-line"><span class="seed">(1)</span> <span class="winner">Arizona</span> over <span class="seed">(16)</span> LIU</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="seed">(9)</span> <span class="winner">Utah State</span> over <span class="seed">(8)</span> Villanova</div>
+            <div class="game-line"><span class="seed">(5)</span> <span class="winner">Wisconsin</span> over <span class="seed">(12)</span> High Point</div>
+            <div class="game-line"><span class="seed">(4)</span> <span class="winner">Arkansas</span> over <span class="seed">(13)</span> Hawai'i</div>
+            <div class="game-line"><span class="seed">(6)</span> <span class="winner">BYU</span> over <span class="seed">(11)</span> Texas</div>
+            <div class="game-line"><span class="seed">(3)</span> <span class="winner">Gonzaga</span> over <span class="seed">(14)</span> Kennesaw State</div>
+            <div class="game-line"><span class="seed">(7)</span> <span class="winner">Miami FL</span> over <span class="seed">(10)</span> Missouri — conservative</div>
+            <div class="game-line"><span class="seed">(2)</span> <span class="winner">Purdue</span> over <span class="seed">(15)</span> Queens</div>
+            <div class="round-label">Round of 32</div>
+            <div class="game-line"><span class="winner">Arizona</span>, <span class="winner">Arkansas</span>, <span class="winner">Gonzaga</span>, <span class="winner">Purdue</span></div>
+            <div class="round-label">Sweet 16</div>
+            <div class="game-line"><span class="winner">Arizona</span>, <span class="winner">Purdue</span></div>
+            <div class="round-label">Elite Eight</div>
+            <div class="game-line"><span class="winner">Arizona</span></div>
+            <div class="region-champion">West Champion: <span>Arizona</span></div>
+          </div>
+        </div>
+
+        <!-- MIDWEST v3 -->
+        <div class="region-card">
+          <div class="region-card-header">
+            <h4>Midwest Region</h4>
+            <span class="region-location">Chicago</span>
+          </div>
+          <div class="region-card-body">
+            <div class="round-label">Round of 64</div>
+            <div class="game-line"><span class="seed">(1)</span> <span class="winner">Michigan</span> over <span class="seed">(16)</span> Howard</div>
+            <div class="game-line upset"><span class="upset-icon">⚡</span> <span class="seed">(9)</span> <span class="winner">Saint Louis</span> over <span class="seed">(8)</span> Georgia</div>
+            <div class="game-line"><span class="seed">(5)</span> <span class="winner">Texas Tech</span> over <span class="seed">(12)</span> Akron — conservative, higher seed</div>
+            <div class="game-line"><span class="seed">(4)</span> <span class="winner">Alabama</span> over <span class="seed">(13)</span> Hofstra</div>
+            <div class="game-line"><span class="seed">(6)</span> <span class="winner">Tennessee</span> over <span class="seed">(11)</span> Miami OH</div>
+            <div class="game-line"><span class="seed">(3)</span> <span class="winner">Virginia</span> over <span class="seed">(14)</span> Wright State</div>
+            <div class="game-line"><span class="seed">(7)</span> <span class="winner">Kentucky</span> over <span class="seed">(10)</span> Santa Clara — conservative</div>
+            <div class="game-line"><span class="seed">(2)</span> <span class="winner">Iowa State</span> over <span class="seed">(15)</span> Tennessee State</div>
+            <div class="round-label">Round of 32</div>
+            <div class="game-line"><span class="winner">Michigan</span>, <span class="winner">Alabama</span>, <span class="winner">Tennessee</span>, <span class="winner">Iowa State</span></div>
+            <div class="round-label">Sweet 16</div>
+            <div class="game-line"><span class="winner">Michigan</span>, <span class="winner">Iowa State</span></div>
+            <div class="round-label">Elite Eight</div>
+            <div class="game-line"><span class="winner">Michigan</span></div>
+            <div class="region-champion">Midwest Champion: <span>Michigan</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final Four V3 -->
+      <div class="final-four-box">
+        <h3>Final Four — Version 3</h3>
+        <div class="ff-matchups">
+          <div class="ff-matchup">Duke <span class="vs">vs</span> Houston</div>
+          <div class="ff-matchup">Arizona <span class="vs">vs</span> Michigan</div>
+        </div>
+        <div class="championship-result">
+          🏆 Champion: <span class="champ-name">Arizona</span> over Duke
+        </div>
+      </div>
+
+      <!-- V3 Upsets -->
+      <h3 class="mb-16 text-gold">Only 5 Upsets Picked (All Universal Expert Consensus)</h3>
+      <div class="upsets-summary">
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">South Florida over Louisville (11 over 6)</div>
+            <span class="upset-conf conf-high">HIGH confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">VCU over North Carolina (11 over 6)</div>
+            <span class="upset-conf conf-high">HIGH confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">Iowa over Clemson (9 over 8)</div>
+            <span class="upset-conf conf-med">MED confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">Saint Louis over Georgia (9 over 8)</div>
+            <span class="upset-conf conf-med">MED confidence</span>
+          </div>
+        </div>
+        <div class="upset-summary-card">
+          <span class="upset-icon">⚡</span>
+          <div>
+            <div class="upset-matchup">Utah State over Villanova (9 over 8)</div>
+            <span class="upset-conf conf-med">MED confidence</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 16px; padding: 16px 20px; background: var(--bg-card); border: 1px solid var(--orange); border-left: 4px solid var(--orange); border-radius: 8px;">
+        <p style="color: var(--orange); font-weight: 600; font-size: 0.9rem;">Key differentiator: Houston to Final Four over Florida — only ~6% of public has this</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== ANALYSIS ===== -->
+<section id="analysis">
+  <div class="container">
+    <p class="section-label">Deep Dive</p>
+    <h2 class="mb-32">Analysis &amp; Data</h2>
+
+    <!-- Why Arizona -->
+    <h3 class="mb-16" style="color: var(--orange);">Why Arizona in All 3 Versions</h3>
+    <div class="arizona-grid mb-48">
+      <div class="az-stat-card">
+        <div class="az-icon">📊</div>
+        <div class="az-stat-value">#2</div>
+        <div class="az-stat-label">KenPom Overall<br>(Off: #5, Def: #3, Eff. Margin: #2)</div>
+      </div>
+      <div class="az-stat-card">
+        <div class="az-icon">🗳️</div>
+        <div class="az-stat-value">55%</div>
+        <div class="az-stat-label">ESPN Consensus<br>33 of 60 experts pick Arizona</div>
+      </div>
+      <div class="az-stat-card">
+        <div class="az-icon">💰</div>
+        <div class="az-stat-value">+300</div>
+        <div class="az-stat-label">DraftKings Odds<br>+350 FanDuel</div>
+      </div>
+      <div class="az-stat-card">
+        <div class="az-icon">🔥</div>
+        <div class="az-stat-value">23-0</div>
+        <div class="az-stat-label">Start to Season<br>No loss since Feb. 14, four top-10 wins last month</div>
+      </div>
+      <div class="az-stat-card">
+        <div class="az-icon">🏆</div>
+        <div class="az-stat-value">23/24</div>
+        <div class="az-stat-label">Historical Fit<br>Last 24 champs: top-21 off &amp; top-31 def. AZ is 5th &amp; 3rd</div>
+      </div>
+      <div class="az-stat-card">
+        <div class="az-icon">📈</div>
+        <div class="az-stat-value">21.9%</div>
+        <div class="az-stat-label">Public Pick %<br>vs Duke 28.4% — gives separation</div>
+      </div>
+    </div>
+
+    <!-- KenPom Table -->
+    <h3 class="mb-16">KenPom Champion Profile</h3>
+    <p class="mb-24 text-muted" style="font-size: 0.88rem;">Teams fitting the champion profile (top-21 AOE, top-31 ADE) — 23 of the last 24 champions matched this.</p>
+    <div class="kenpom-wrap mb-48">
+      <table class="kenpom-table">
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>AOE Rank</th>
+            <th>ADE Rank</th>
+            <th>AEM Rank</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Duke</td>
+            <td>4</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+          <tr class="highlight-row">
+            <td>Arizona</td>
+            <td>5</td>
+            <td>3</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Michigan</td>
+            <td>8</td>
+            <td>1</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Florida</td>
+            <td>9</td>
+            <td>6</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>Houston</td>
+            <td>14</td>
+            <td>5</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>Iowa State</td>
+            <td>21</td>
+            <td>4</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>Illinois</td>
+            <td>2</td>
+            <td>28</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>Vanderbilt</td>
+            <td>7</td>
+            <td>31</td>
+            <td>12</td>
+          </tr>
+          <tr>
+            <td>Louisville</td>
+            <td>19</td>
+            <td>25</td>
+            <td>19</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Public Pick Bar Chart -->
+    <h3 class="mb-16">Public Pick Percentages</h3>
+    <p class="mb-24 text-muted" style="font-size: 0.88rem;">Yahoo Sports championship pick rates — lower ownership = more pool separation.</p>
+    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 48px;">
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">Duke</span>
+          <div class="bar-track">
+            <div class="bar-fill top" style="width: 100%;">28.4%</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label" style="color: var(--orange);">Arizona</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 77.1%;">21.9%</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Michigan</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 50.4%;">14.3%</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Florida</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 24.3%;">6.9%</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Houston</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 20.1%;">5.7%</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">UConn</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 12.3%;">3.5%</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Purdue</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 10.9%;">3.1%</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Iowa State</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 7.0%;">2.0%</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Gonzaga</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 6.3%;">1.8%</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Michigan St.</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 4.9%;">1.4%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Championship Odds -->
+    <h3 class="mb-16">Championship Odds</h3>
+    <div class="odds-grid mb-48">
+      <div class="odds-card">
+        <div class="odds-team">Duke</div>
+        <div class="odds-line"><span class="book">BetMGM</span> <span class="number">+300</span></div>
+        <div class="odds-line"><span class="book">DraftKings</span> <span class="number">+325</span></div>
+      </div>
+      <div class="odds-card" style="border-color: var(--orange);">
+        <div class="odds-team" style="color: var(--orange);">Arizona</div>
+        <div class="odds-line"><span class="book">BetMGM</span> <span class="number">+400</span></div>
+        <div class="odds-line"><span class="book">DraftKings</span> <span class="number">+300</span></div>
+        <div class="odds-line"><span class="book">FanDuel</span> <span class="number">+350</span></div>
+      </div>
+      <div class="odds-card">
+        <div class="odds-team">Michigan</div>
+        <div class="odds-line"><span class="book">BetMGM</span> <span class="number">+350</span></div>
+        <div class="odds-line"><span class="book">DraftKings</span> <span class="number">+360</span></div>
+      </div>
+      <div class="odds-card">
+        <div class="odds-team">Florida</div>
+        <div class="odds-line"><span class="book">BetMGM</span> <span class="number">+650</span></div>
+        <div class="odds-line"><span class="book">DraftKings</span> <span class="number">+700</span></div>
+      </div>
+      <div class="odds-card">
+        <div class="odds-team">Houston</div>
+        <div class="odds-line"><span class="book">BetMGM</span> <span class="number">+900</span></div>
+        <div class="odds-line"><span class="book">DraftKings</span> <span class="number">+1100</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MUST-PICK UPSETS ===== -->
+<section id="upsets">
+  <div class="container">
+    <p class="section-label">Universal Picks</p>
+    <h2 class="mb-32">Must-Pick Upsets (All Versions)</h2>
+
+    <div class="must-pick-grid">
+      <div class="must-pick-card">
+        <div class="must-pick-number">01</div>
+        <div class="must-pick-matchup">⚡ (11) South Florida over (6) Louisville</div>
+        <p class="must-pick-detail">All experts agree. Louisville's Mikel Brown Jr. nursing back injury. 39% of public already picking this. Highest-confidence upset.</p>
+      </div>
+      <div class="must-pick-card">
+        <div class="must-pick-number">02</div>
+        <div class="must-pick-matchup">⚡ (11) VCU over (6) North Carolina</div>
+        <p class="must-pick-detail">All experts agree. UNC star Caleb Wilson out with hand surgery. VCU has Final Four DNA from 2011.</p>
+      </div>
+      <div class="must-pick-card">
+        <div class="must-pick-number">03</div>
+        <div class="must-pick-matchup">⚡ (9) Iowa over (8) Clemson</div>
+        <p class="must-pick-detail">Bennett Stirtz averaging 20.2 PPG. Unanimous expert pick. Barely an upset.</p>
+      </div>
+      <div class="must-pick-card">
+        <div class="must-pick-number">04</div>
+        <div class="must-pick-matchup">⚡ (9) Saint Louis over (8) Georgia</div>
+        <p class="must-pick-detail">Robbie Avila "Cream Abdul-Jabbar" shooting 40%+ from 3 as a center. Unanimous pick.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <p>Sources: ESPN, CBS Sports, Sports Illustrated, Yahoo Sports, KenPom, BartTorvik, DraftKings, BetMGM, FanDuel</p>
+    <p>
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+    </p>
+    <p>Updated: March 19, 2026</p>
+  </div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+// Tab switching
+document.querySelectorAll('.version-tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Deactivate all
+    document.querySelectorAll('.version-tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.version-panel').forEach(p => p.classList.remove('active'));
+    // Activate clicked
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  });
+});
+
+// Smooth scroll for nav links + close mobile menu
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    document.querySelector('.nav-links').classList.remove('open');
+  });
+});
+
+// Active nav highlighting on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+function updateActiveNav() {
+  const scrollPos = window.scrollY + 100;
+  sections.forEach(section => {
+    const top = section.offsetTop;
+    const height = section.offsetHeight;
+    const id = section.getAttribute('id');
+    if (scrollPos >= top && scrollPos < top + height) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + id) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+}
+
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+updateActiveNav();
+</script>
+
+</body>
+</html>
